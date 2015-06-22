@@ -1,0 +1,10 @@
+{
+  "name": "cultural-trail-backend"
+  , "description": "The backend interface for the Indianapolis Cultural Trail mobile application"
+  , "dependencies": {
+    "express": "^4.13.0"
+  }
+  , "scripts": {
+    "start": "node sever.js"
+  }
+}
