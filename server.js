@@ -9,6 +9,10 @@ var server = http.createServer( app );
 
 var mainRouter = require( './routers/mainRouter' );
 
+app.get( '/', function( req, res ) {
+	res.send( 'Welcome!' );
+});
+
 app.use( '/main', mainRouter );
 
 //process.env.PORT defined by heroku
