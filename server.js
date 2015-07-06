@@ -10,14 +10,12 @@ global.db = mongoose.createConnection( 'mongodb://xtern:2015@ds035280.mongolab.c
 
 var server = http.createServer( app );
 
-var mainRouter = require( './routers/mainRouter' );
 var issueRouter = require( './routers/issueRouter' );
 
 app.get( '/', function( req, res ) {
 	res.send( 'Welcome!' );
 });
 
-app.use( '/main', mainRouter );
 app.use( '/issues', issueRouter );
 
 //process.env.PORT defined by heroku
