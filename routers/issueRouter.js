@@ -24,7 +24,7 @@ router.get( '/', function( req, res ){
 			return res.send(err);
 		}
 
-		res.send(docs);
+		res.send(docs.documents);
 	}, pageSize, pageNumber);
 });
 
