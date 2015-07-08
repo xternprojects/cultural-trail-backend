@@ -44,7 +44,8 @@ router.post( '/', jsonParser, function( req, res ){
 
 // PUT issue, updating a current issue
 router.put( '/', jsonParser, function( req, res){
-	db.findByIdAndUpdate(req.body._id, { name: req.body.name, description: req.body.description, location: { lat: req.body.location[lat], long: req.body.location[long]}, priority: req.body.priority, open: req.body.open, reportedDate: req.body.reportedDate, resolvedDate: req.body.resolvedDate}, function( err, doc ){
+	var issue = req.body;
+	db.findByIdAndUpdate(issue._id, { name: issue.name, description: issue.description, location: { lat: issue.location[lat], long: issue.location[long]}, priority: issue.priority, open: issue.open, reportedDate: issue.reportedDate, resolvedDate: issue.resolvedDate}, function( err, doc ){
 		if ( err ){
 			return res.send( err);
 		}
