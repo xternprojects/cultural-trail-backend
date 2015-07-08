@@ -29,10 +29,12 @@ router.get( '/', function( req, res ){
 });
 
 router.post( '/', jsonParser, function( req, res ){
+	
 	var issue = req.body;
-	issue.reportedDate = moment().format( 'MM-DD-YYYY hh:mm a');
+	issue.reportedDate = moment().format( 'MM/DD/YYYY hh:mm a' );
 	issue.resolvedDate = null;
 	var new_doc = new Issue( issue );
+	
 	Issue.create( new_doc, function( err, doc ){
 		if( err ){
 			return res.send( err );
@@ -44,14 +46,26 @@ router.post( '/', jsonParser, function( req, res ){
 
 // PUT issue, updating a current issue
 router.put( '/', jsonParser, function( req, res){
+	
 	var issue = req.body;
 	var id = issue._id;
 	delete issue._id;
-	db.findByIdAndUpdate(id, issue, function( err, doc ){
+
+	if( 'open' in issue ){
+		if( !issue.open ){
+			issue.resolvedDate = moment().format( 'MM/DD/YYYY hh:mm a' );
+		}
+		else{
+			issue.resolvedDate = null;
+		}
+	}
+
+	var options = { new: true };
+	Issue.findByIdAndUpdate(id, issue, options, function( err, doc ){
 		if ( err ){
 			return res.send( err);
 		}
-		res.send ( doc );
+		res.send( doc );
 	});
 });
 
