@@ -8,7 +8,7 @@ var IssueSchema = new Schema({
     "description": String,
     "location": {
         "lat": Number,
-        "long": Number
+        "lng": Number
     },
     "priority": Number,
     "open": Boolean,
