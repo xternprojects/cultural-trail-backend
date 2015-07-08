@@ -46,7 +46,7 @@ router.post( '/', jsonParser, function( req, res ){
 router.put( '/', jsonParser, function( req, res){
 	var issue = req.body;
 	var id = issue._id;
-	delete id;
+	delete issue._id;
 	db.findByIdAndUpdate(id, issue, function( err, doc ){
 		if ( err ){
 			return res.send( err);
