@@ -42,7 +42,15 @@ router.post( '/', jsonParser, function( req, res ){
 	});
 });
 
+// PUT issue, updating a current issue
 router.put( '/', jsonParser, function( req, res){
+	db.findByIdAndUpdate(req.body._id, { name: req.body.name, description: req.body.description, location: { lat: req.body.location[lat], long: req.body.location[long]}, priority: req.body.priority, open: req.body.open, reportedDate: req.body.reportedDate, resolvedDate: req.body.resolvedDate}, function( err, doc ){
+		if ( err ){
+			return res.send( err);
+		}
+		res.send ( doc );
+	});
+});
 
-})
+
 module.exports = router;
