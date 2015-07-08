@@ -12,14 +12,20 @@ var router = express.Router();
 var Issue = require( '../schemas/issue' );
 
 router.get( '/', function( req, res ){
-	console.log( req.query );
-	Issue.find( req.query, function( err, docs ){
+
+	//get pagination info if it is given and remove it from query object
+	var pageSize = req.query.pageSize > 0 ? req.query.pageSize : 10;
+	var pageNumber = req.query.pageNumber > 0 ? req.query.pageNumber : 1;
+	delete req.query.pageSize;
+	delete req.query.pageNumber;
+
+	Issue.findPaginated( req.query, function( err, docs ){
 		if (err){
 			return res.send(err);
 		}
 
 		res.send(docs);
-	});
+	}, pageSize, pageNumber);
 });
 
 router.post( '/', jsonParser, function( req, res ){
