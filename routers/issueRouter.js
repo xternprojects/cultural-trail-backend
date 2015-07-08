@@ -42,4 +42,7 @@ router.post( '/', jsonParser, function( req, res ){
 	});
 });
 
+router.put( '/', jsonParser, function( req, res){
+
+})
 module.exports = router;
