@@ -6,6 +6,7 @@ var Schema = mongoose.Schema;
 var IssueSchema = new Schema({
 	"name": String,
     "description": String,
+    "reportedBy": String,
     "location": {
         "lat": Number,
         "lng": Number
