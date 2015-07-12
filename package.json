@@ -3,11 +3,12 @@
   "description": "The backend interface for the Indianapolis Cultural Trail mobile application",
   "dependencies": {
     "body-parser": "^1.13.1",
+    "cloudinary": "^1.2.1",
+    "dotenv": "^1.2.0",
     "express": "^4.13.0",
     "moment": "^2.10.3",
     "mongoose": "^4.0.6",
     "mongoose-pages": "0.0.3",
-    "multer": "^0.1.8",
     "underscore": "^1.8.3"
   },
   "scripts": {
