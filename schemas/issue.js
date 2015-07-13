@@ -7,6 +7,7 @@ var IssueSchema = new Schema({
 	"name": String,
     "description": String,
     "reportedBy": String,
+    "picture": String,
     "location": {
         "lat": Number,
         "lng": Number
