@@ -10,8 +10,9 @@ router.get( '/', function( req, res ){
 	var public_id = req.query.public_id ? req.query.public_id : null;
 	var params = '';
 	
-	params += public_id;
+	params += public_id ? 'public_id=' + public_id + '&' : '';
 	params += 'timestamp=' + timestamp + process.env.CLOUDINARY_SECRET;
+	console.log(params);
 	shasum.update( params );
 	var signature = shasum.digest( 'hex' );
 	var auth = {
