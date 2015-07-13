@@ -1,7 +1,6 @@
 var express = require( 'express' );
 var mongoose = require( 'mongoose' );
 var bodyParser = require( 'body-parser' );
-var multer = require( 'multer' );
 var moment = require( 'moment' );
 
 var app = express();
