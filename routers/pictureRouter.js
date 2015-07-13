@@ -12,7 +12,6 @@ router.get( '/', function( req, res ){
 	
 	params += public_id ? 'public_id=' + public_id + '&' : '';
 	params += 'timestamp=' + timestamp + process.env.CLOUDINARY_SECRET;
-	console.log(params);
 	shasum.update( params );
 	var signature = shasum.digest( 'hex' );
 	var auth = {
