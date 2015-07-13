@@ -20,6 +20,10 @@ var pictureRouter = require( './routers/pictureRouter' );
 app.use( '/issues', issueRouter );
 app.use( '/picture', pictureRouter );
 
+app.get( '/', function( req, res ){
+	res.send( 'Welcome!' );
+});
+
 //process.env.PORT defined by heroku
 server.listen( process.env.PORT, function () {
 	console.log( 'listening' );
