@@ -3,7 +3,7 @@ var crypto = require( 'crypto' );
 
 var router = express.Router();
 
-router.get( '/', function( req, res ){
+router.get( '/auth', function( req, res ){
 	
 	var shasum = crypto.createHash('sha1');
 	var timestamp = Math.round((new Date()).getTime() / 1000); //UNIX timestamp
