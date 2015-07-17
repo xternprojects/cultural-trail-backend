@@ -1,0 +1,27 @@
+{
+	"corridors": [
+		"North"
+		, "Northeast"
+		, "Alabama St."
+		, "Southeast"
+		, "Washington St."
+		, "Capitol Ave."
+		, "West"
+	]
+
+	, "items": [
+		"Light"
+		, "Bench"
+		, "Crossing signal"
+		, "Trail sign"
+		, "Edging"
+		, "Bollards"
+		, "Pavers"
+		, "Crossing push button"
+		, "Light control box"
+		, "Sprinkler box"
+		, "Curb"
+		, "Trash can"
+		, "Recycling can"
+	]
+}
