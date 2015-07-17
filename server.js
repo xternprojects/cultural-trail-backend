@@ -16,9 +16,11 @@ var server = http.createServer( app );
 
 var issueRouter = require( './routers/issueRouter' );
 var pictureRouter = require( './routers/pictureRouter' );
+var formRouter = require( './routers/formRouter' );
 
 app.use( '/issues', issueRouter );
 app.use( '/picture', pictureRouter );
+app.use( '/formdetails', formRouter );
 
 app.get( '/', function( req, res ){
 	res.send( 'Welcome!' );
