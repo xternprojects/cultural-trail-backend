@@ -4,9 +4,8 @@ var mongoosePages = require( 'mongoose-pages' );
 var Schema = mongoose.Schema;
 
 var IssueSchema = new Schema({
-	"name": String,
+    "name": String,
     "description": String,
-    "request": String,
     "reportedBy": String,
     "picture": String,
     "location": {
