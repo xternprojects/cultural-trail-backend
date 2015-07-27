@@ -1,10 +1,11 @@
 var express = require( 'express' );
 var crypto = require( 'crypto' );
+var log = require('tablog');
 
 var router = express.Router();
 
 router.get( '/auth', function( req, res ){
-
+	log.info("ROUTE: GET /picture/auth");
 	var shasum = crypto.createHash('sha1');
 	var timestamp = ""+Math.round((new Date()).getTime() / 1000); //UNIX timestamp
 	var public_id = req.query.public_id ? req.query.public_id : null;
