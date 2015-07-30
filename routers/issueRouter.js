@@ -2,7 +2,8 @@ var express = require( 'express' );
 var mongoose = require( 'mongoose' );
 var bodyParser = require( 'body-parser' );
 var moment = require( 'moment' );
-var log = require('tablog');
+var log = require( 'tablog' );
+var _ = require( 'underscore' );
 
 var app = express();
 var jsonParser = bodyParser.json();
@@ -45,7 +46,7 @@ router.post( '/', jsonParser, function( req, res ){
 });
 
 // PUT issue, updating a current issue
-router.put( '/', jsonParser, function( req, res){
+router.put( '/', jsonParser, function( req, res ){
 	log.info('ROUTE: PUT /issue')
 	var issue = req.body;
 	var id = issue._id;
@@ -63,11 +64,26 @@ router.put( '/', jsonParser, function( req, res){
 	var options = { new: true };
 	Issue.findByIdAndUpdate(id, issue, options, function( err, doc ){
 		if ( err ){
-			return res.send( err);
+			return res.send( err );
 		}
 		res.send( doc );
 	});
 });
 
+
+router.delete( '/', jsonParser, function( req, res ){
+	log.info('ROUTE: DELETE /issue');
+	var ids = req.body;
+
+	_.each( ids, function( item ){
+		Issue.findByIdAndRemove( item._id, function( err, doc ){
+			if( err ){
+				return res.send( err );
+			}
+		});
+	});
+
+	res.sendStatus(200);
+});
 
 module.exports = router;
