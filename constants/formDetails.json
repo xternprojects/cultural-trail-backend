@@ -10,18 +10,25 @@
 	]
 
 	, "items": [
-		"Light"
-		, "Bench"
-		, "Crossing signal"
-		, "Trail sign"
-		, "Edging"
-		, "Bollards"
-		, "Pavers"
-		, "Crossing push button"
-		, "Light control box"
-		, "Sprinkler box"
-		, "Curb"
-		, "Trash can"
-		, "Recycling can"
+		{"main_item": "Light", "damages": ["Graffiti", "Out", "Damaged", "Destroyed"]}
+		, {"main_item": "Bench", "damages": ["Graffiti", "Loose", "Damaged", "Destroyed"]}
+		, {"main_item": "Crossing signal", "damages": ["No Hand", "No Walk", "Crooked"]}
+		, {"main_item": "Trail sign", "damages": ["Graffiti", "Bent", "Broken", "Missing"]}
+		, {"main_item": "Edging", "damages": ["Loose", "Broken", "Missing"]}
+		, { "main_item": "Bollard", "damages": ["Graffiti", "Loose", "Impacted", "Destroyed"]}
+		, {"main_item": "Paver", "damages": ["Soiled", "Broken", "Missing"]}
+		, {"main_item": "Crossing push button", "damages": ["Graffiti", "No Sound", "No Push"]}
+		, {"main_item": "Light control box", "damages": ["Graffiti", "Light Sensor", "Damaged", "Destroyed"]}
+		, {"main_item": "Sprinkler box", "damages": ["Graffiti", "Damaged"]}
+		, {"main_item": "Curb", "damages": ["Broken"]}
+		, {"main_item": "Trash can", "damages": ["Graffiti", "Loose", "Latch", "Pin", "Door", "Top", "Destroyed"]}
+		, {"main_item": "Recycling can", "damages": ["Loose", "Latch", "Pin", "Door", "Top", "Destroyed"]}
+		, {"main_item": "Glass/Debris", "damages": []}
+		, {"main_item": "Art Installation", "damages": ["Graffiti"]}
+	]
+
+	, "responsible_party": [
+		"ICT"
+		, "DPW"
 	]
 }
