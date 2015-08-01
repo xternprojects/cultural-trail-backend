@@ -16,7 +16,7 @@ cloudinary.config(); //automatically connects to cloudinary through environment 
 var server = http.createServer( app );
 
 app.all('*', function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "xternprojects.gihub.io");
+  res.header("Access-Control-Allow-Origin", "http://xternprojects.gihub.io");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   next();
  });
